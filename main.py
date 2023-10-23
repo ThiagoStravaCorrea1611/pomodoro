@@ -29,6 +29,16 @@ label_01 = Label(text="Timer", font=(FONT_NAME, 35, "bold"), fg = GREEN, bg = YE
 label_01.config(padx=0, pady=5)
 label_01.grid(column=1, row=0)
 
+# Button: "Start"
+button_start = Button(text = "Start")
+button_start.grid(column=0, row=2)
+button_start.config(padx=5, pady=5)
+
+# Button: "Reset"
+button_reset = Button(text = "Reset")
+button_reset.grid(column=2, row=2)
+button_reset.config(padx=5, pady=5)
+
 check_mark = "✔"
 
 
