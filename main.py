@@ -14,11 +14,17 @@ LONG_BREAK_MIN = 20
 
 # ---------------------------- TIMER RESET ------------------------------- # 
 
+
+
 # ---------------------------- TIMER MECHANISM ------------------------------- # 
+def start_timer():
+    count_down(WORK_MIN*60)
 
 # ---------------------------- COUNTDOWN MECHANISM ------------------------------- # 
 def count_down(count):
-    canvas.itemconfig(timer_text, text = count)
+    minutes = count // 60
+    seconds = count % 60
+    canvas.itemconfig(timer_text, text = f"{'{:02d}'.format(minutes)}:{'{:02d}'.format(seconds)}")
     if count > 0:
         window.after(1000, count_down, count - 1)
 
@@ -36,7 +42,7 @@ label_01.config(padx=0, pady=5)
 label_01.grid(column=1, row=0)
 
 # Button: "Start"
-button_start = Button(text = "Start", highlightthickness=0)
+button_start = Button(text = "Start", highlightthickness=0, command=start_timer)
 button_start.grid(column=0, row=2)
 button_start.config(padx=5, pady=5)
 
@@ -58,5 +64,5 @@ canvas.create_image(100, 112, image = pomodoro_image)
 timer_text = canvas.create_text(100, 130, text = "00:00", fill = "white", font = (FONT_NAME, 35, "bold"))
 canvas.grid(column=1, row=1)
 
-count_down(5)
+
 window.mainloop()
