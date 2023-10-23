@@ -1,4 +1,6 @@
 
+from tkinter import *
+
 # ---------------------------- CONSTANTS ------------------------------- #
 PINK = "#e2979c"
 RED = "#e7305b"
@@ -16,3 +18,8 @@ LONG_BREAK_MIN = 20
 # ---------------------------- COUNTDOWN MECHANISM ------------------------------- # 
 
 # ---------------------------- UI SETUP ------------------------------- #
+
+window = Tk()
+window.title("Pomodoro")
+
+window.mainloop()
