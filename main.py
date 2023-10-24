@@ -29,9 +29,6 @@ def reset_timer():
     label_02.config(text = None)
     # Reset the Instruction
     label_01.config(text = "Timer ", fg = GREEN)
-    
-    
-
 
 # ---------------------------- TIMER MECHANISM ------------------------------- # 
 def start_timer():
@@ -98,5 +95,5 @@ canvas.create_image(100, 112, image = pomodoro_image)
 timer_text = canvas.create_text(100, 130, text = "00:00", fill = "white", font = (FONT_NAME, 35, "bold"))
 canvas.grid(column=1, row=1)
 
-
+# Main loop
 window.mainloop()
